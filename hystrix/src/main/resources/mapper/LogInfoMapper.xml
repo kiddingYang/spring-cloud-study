@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.studyCloud.hystrix.dao.LogInfoDao">
+    
+    <resultMap id="resultMap" type="com.study.springCloud.commons.bean.LogInfo">
+        <id column="id" property="id" />
+        <id column="url" property="url"/>
+        <id column="param" property="param"/>
+        <id column="result" property="result"/>
+        <id column="time" property="time"/>
+
+    </resultMap>
+
+    
+    <insert id="createLoginfo" parameterType="com.study.springCloud.commons.bean.LogInfo" useGeneratedKeys="true" >
+       insert into loginfo(url,param,result,time) values (#{url},#{param},#{result},#{time})
+    </insert>
+
+    
+</mapper>
